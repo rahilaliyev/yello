@@ -1,0 +1,30 @@
+footer {
+  background-color: #001312;
+  .footer-container {
+    padding-top: 29px;
+    padding-bottom: 20px;
+    @include flexBox(space-between, center);
+    border-top: 0.58px solid #cdcddf;
+    .right {
+      @include flexBox(center, center);
+      a {
+        @include flexBox(center, center);
+        flex-direction: column;
+        span {
+          display: block;
+          @include fontSize(10px, 400, 12px, transparent);
+          background: linear-gradient(0deg, #8c867b, #8c867b),
+            radial-gradient(429.69% 713.47% at -84.97% 182.09%, #835d2d 0%, #8a6331 24%, #f8e07f 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin: 4px 0;
+        }
+        &:nth-child(2) {
+          margin-left: 24px;
+          margin-right: 42px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.homepage {
+  padding-top: 70px;
+  padding-bottom: 74px;
+  &-container {
+    @include flexBox(center, center);
+    .left {
+      width: 318px;
+      background: linear-gradient(
+        137.43deg,
+        rgba(255, 255, 255, 0.0385) 3.89%,
+        rgba(195, 210, 191, 0.0245) 54.78%,
+        rgba(255, 255, 255, 0.042) 100%
+      );
+      border: 1px solid #b59770;
+      backdrop-filter: blur(7px);
+      border-radius: 12px;
+      padding-top: 17.75px;
+      padding-left: 21.5px;
+      padding-right: 21.5px;
+      padding-bottom: 27px;
+      h6 {
+        @include fontSize(23px, 700, 34.5px, white);
+        margin-left: 18.5px;
+        span {
+          font-weight: 600;
+          border-left: 0.68px solid #cdcddf;
+          padding-left: 6px;
+        }
+      }
+      ul {
+        li {
+          @include flexBox(flex-start, center);
+          position: relative;
+          background: linear-gradient(137.43deg, rgba(52, 52, 52, 0.5) 3.89%, rgba(61, 61, 61, 0.2) 100%);
+          border-radius: 5px;
+          padding-top: 7px;
+          padding-left: 31px;
+          padding-right: 10px;
+          padding-bottom: 7px;
+          span {
+            margin-left: 18px;
+            @include defaultSize(white);
+          }
+          .arrow {
+            position: absolute;
+            right: 10px;
+            path {
+              stroke: white;
+              fill: white;
+            }
+          }
+          svg {
+            path {
+              stroke: white;
+            }
+          }
+          &:not(:last-child) {
+            margin-bottom: 5px;
+          }
+          &.active {
+            margin: 13.5px 0;
+            svg {
+              path {
+                stroke: url(#paint0_linear_1_11014);
+              }
+            }
+            .arrow {
+              path {
+                fill: url(#paint1_linear_1_8378);
+                mask: url(#path-1-inside-1_1_8378);
+              }
+            }
+            span {
+              background: linear-gradient(
+                103.04deg,
+                rgba(255, 233, 134, 0.88) -25.17%,
+                #bc7e20 77.94%,
+                #a74d01 128.68%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              text-fill-color: transparent;
+            }
+          }
+        }
+      }
+    }
+    .center {
+      margin-left: 52px;
+      margin-right: 44px;
+    }
+  }
+}
