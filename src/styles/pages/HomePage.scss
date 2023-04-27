@@ -71,12 +71,7 @@
               }
             }
             span {
-              background: linear-gradient(
-                103.04deg,
-                rgba(255, 233, 134, 0.88) -25.17%,
-                #bc7e20 77.94%,
-                #a74d01 128.68%
-              );
+              background: linear-gradient(103.04deg, rgba(255, 233, 134, 0.88) -25.17%, #bc7e20 77.94%, #a74d01 128.68%);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;
@@ -89,6 +84,145 @@
     .center {
       margin-left: 52px;
       margin-right: 44px;
+      width: calc(100% - 350px - 318px);
+      h3 {
+        @include fontSize(35px, 700, 32.5px, white);
+        margin-bottom: 17px;
+      }
+      p {
+        @include fontSize(20px, 400, 30px, rgba(218, 209, 212, 0.8));
+      }
+      .button-group {
+        display: flex;
+        margin-top: 20px;
+        button {
+          @include box(155px, 45px);
+          @include fontSize(14px, 600, 21px, #f0f0f0);
+          text-align: center;
+          padding: 12px 0;
+          border-radius: 10px;
+          &:first-child {
+            background: linear-gradient(103.04deg, rgba(255, 233, 134, 0.88) -25.17%, #bc7e20 77.94%, #a74d01 128.68%);
+            margin-right: 25px;
+          }
+          &:last-child {
+            background: linear-gradient(90deg, #967a53 0%, #e9d39f 100%), linear-gradient(0deg, #b59770, #b59770);
+            padding: 1px;
+            overflow: hidden;
+            span {
+              @include flexBox(center, center);
+              @include box(100%, 100%);
+              border-radius: 10px;
+              background-color: #001312;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      width: 350px;
+      padding: 1px;
+      background: linear-gradient(103.04deg, rgba(255, 233, 134, 0.88) -25.17%, #bc7e20 77.94%, #a74d01 128.68%),
+        linear-gradient(
+          137.43deg,
+          rgba(255, 255, 255, 0.0385) 3.89%,
+          rgba(195, 210, 191, 0.0245) 54.78%,
+          rgba(255, 255, 255, 0.042) 100%
+        );
+
+      border-radius: 10px;
+      .content {
+        border-radius: 10px;
+        background-color: #001312;
+        padding: 18px 20px;
+        .balance {
+          @include fontSize(12px, 400, 17px, #aeaeae);
+        }
+        .price {
+          margin-top: 3px;
+          @include fontSize(22px, 700, 33px, white);
+          letter-spacing: 0.02em;
+        }
+        form {
+          .paying {
+            margin-top: 12px;
+            margin-bottom: 6.5px;
+            @include flexBox(space-between, normal);
+            span {
+              @include fontSize(12px, 400, 18px, white);
+            }
+          }
+          .form-input {
+            @include flexBox(space-between, center);
+            position: relative;
+            background: linear-gradient(137.43deg, rgba(52, 52, 52, 0.5) 3.89%, rgba(61, 61, 61, 0.2) 100%);
+            box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+              0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+              0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+            border-radius: 10px;
+            padding: 12px 17px;
+            .svg {
+              @include box(20px, 20px);
+              @include flexBox(center, center);
+            }
+            .select-box {
+              @include flexBox(center, center);
+              background: linear-gradient(103.04deg, rgba(255, 233, 134, 0.88) -25.17%, #bc7e20 77.94%, #a74d01 128.68%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              svg {
+                &:first-child {
+                  margin-right: 5px;
+                }
+                &:last-child {
+                  margin-left: 5px;
+                }
+              }
+            }
+            input {
+              width: 100%;
+              margin-left: 10px;
+              background-color: transparent;
+              @include fontSize(16px, 600, 24px, white);
+            }
+            ::placeholder {
+              @include fontSize(16px, 600, 24px, white);
+            }
+          }
+          .change-button-and-info {
+            margin: 9.5px 0;
+            @include flexBox(space-between, center);
+            button {
+              padding: 9px;
+              background: linear-gradient(137.43deg, rgba(52, 52, 52, 0.5) 3.89%, rgba(61, 61, 61, 0.2) 100%);
+              border-radius: 38px;
+              @include flexBox(center, center);
+            }
+            .information {
+              @include flexBox(center, center);
+              span {
+                display: block;
+                margin-top: 3px;
+                margin-right: 3px;
+                @include fontSize(10px, 400, 15px, #aeaeae);
+              }
+            }
+          }
+          .checkbox-wrapper {
+            display: flex;
+            p {
+              @include fontSize(10px, 400, 15px, #aeaeae);
+              letter-spacing: -0.02em;
+            }
+            .form-checkbox {
+              label {
+                display: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

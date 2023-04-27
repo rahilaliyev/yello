@@ -10,9 +10,15 @@
   width: 1243px;
   margin: 0 auto;
 }
+body {
+  overflow-y: hidden;
+}
 
 main {
+  @include flexBox(center, center);
   background-color: #001312;
+  overflow: auto;
+  height: calc(100vh - 110px - 116px);
 }
 
 a {
