@@ -9,16 +9,57 @@
 .container {
   width: 1243px;
   margin: 0 auto;
+  @include breakpoint(laptop) {
+    width: 100%;
+    padding: 0 30px;
+  }
 }
 body {
   overflow-y: hidden;
+  @include breakpoint(laptop) {
+    overflow-y: auto;
+  }
 }
 
 main {
   @include flexBox(center, center);
   background-color: #001312;
-  overflow: auto;
-  height: calc(100vh - 110px - 116px);
+  height: calc(100vh - 110px - 110px);
+  @include breakpoint(laptop) {
+    height: auto;
+  }
+}
+#root {
+  position: relative;
+}
+.hamburger {
+  @include flexBox(center, center);
+  @include box(65px, 65px);
+  position: fixed;
+  bottom: 15px;
+  right: 13px;
+  padding: 1.68px;
+  background: linear-gradient(0deg, rgba(209, 210, 215, 0.2), rgba(209, 210, 215, 0.2)),
+    linear-gradient(307.92deg, #ecaf5a 0%, #89683d 56.21%);
+  border-radius: 50%;
+  cursor: pointer;
+  &-wrapper {
+    border-radius: 50%;
+    background-color: #001312;
+    @include flexBox(center, center);
+    flex-direction: column;
+    padding: 12px 15px;
+    span {
+      display: block;
+      @include fontSize(12px, 500, 14px, inherit);
+      background: linear-gradient(0deg, rgba(174, 174, 174, 0.25), rgba(174, 174, 174, 0.25)),
+        linear-gradient(307.92deg, #ecaf5a 0%, #89683d 56.21%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-top: 3px;
+    }
+  }
 }
 
 a {

@@ -1,13 +1,18 @@
 import { ReactComponent as Logo } from "@/assets/images/Logo.svg";
 import { Link, NavLink } from "react-router-dom";
 import { ReactComponent as Basket } from "@/assets/images/basket.svg";
+import { useContext } from "react";
+import ScreenSizeContext from "../context/ScreenSizeContext";
+import LogoMobile from "@/assets/images/Logo-mobile.png";
+
 const Header = () => {
+  const { isMobile } = useContext(ScreenSizeContext);
   return (
     <header>
       <div className="header-container container">
         <div className="left">
           <Link to="/" className="logo">
-            <Logo />
+            {isMobile ? <img src={LogoMobile} alt="Logo" /> : <Logo />}
           </Link>
           <ul>
             <li>
