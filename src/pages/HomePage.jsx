@@ -1,16 +1,39 @@
+import { useState, useCallback } from "react";
 import { ReactComponent as Wallet } from "@/assets/images/wallet.svg";
 import { ReactComponent as Gateway } from "@/assets/images/gateway.svg";
 import { ReactComponent as Chart } from "@/assets/images/chart-tv.svg";
 import { ReactComponent as OppositeArrows } from "@/assets/images/opposite-arrows.svg";
 import { ReactComponent as ArrowRight } from "@/assets/images/arrow-right.svg";
-import { ReactComponent as NearIcon } from "@/assets/images/nearIcon.svg";
-import { ReactComponent as ThpayIcon } from "@/assets/images/thpayCoinIcon.svg";
 import { ReactComponent as CoinSwap } from "@/assets/images/coinSwap.svg";
 import { ReactComponent as ArrowBottom } from "@/assets/images/arrow-bottom.svg";
 import { ReactComponent as ChangeIcon } from "@/assets/images/change-icon.svg";
 import { ReactComponent as QuestionIcon } from "@/assets/images/question-icon.svg";
+import { ReactComponent as Mark } from "@/assets/images/mark.svg";
+import NearIconPng from "@/assets/images/nearIcon.png";
+import ThpayIcon from "@/assets/images/thpayIcon.png";
 
 const HomePage = () => {
+  const [values, setValues] = useState({ firstValue: "", secondValue: "", condition: false });
+
+  const handleChange = useCallback(({ target: { name, value, checked } }) => {
+    name === "condition"
+      ? setValues((prevState) => ({
+          ...prevState,
+          condition: checked,
+        }))
+      : setValues((prevState) => ({
+          ...prevState,
+          [name]: value,
+        }));
+  }, []);
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      console.log(values);
+    },
+    [values]
+  );
+
   return (
     <section className="homepage">
       <div className="homepage-container container">
@@ -53,7 +76,7 @@ const HomePage = () => {
               Your Balance: <span>$0.92</span>
             </div>
             <div className="price">0.20115234 NEAR</div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <div className="paying">
                   <span>You pay</span>
@@ -61,9 +84,9 @@ const HomePage = () => {
                 </div>
                 <div className="form-input">
                   <div className="svg">
-                    <NearIcon />
+                    <img src={NearIconPng} alt="near" />
                   </div>
-                  <input type="number" placeholder="0" />
+                  <input type="number" placeholder="0" value={values.firstValue} onChange={handleChange} name="firstValue" />
                   <div className="select-box">
                     <CoinSwap />
                     NEAR
@@ -81,9 +104,15 @@ const HomePage = () => {
                 </div>
                 <div className="form-input">
                   <div className="svg">
-                    <ThpayIcon />
+                    <img src={ThpayIcon} alt="thpay" />
                   </div>
-                  <input type="number" placeholder="0" />
+                  <input
+                    type="number"
+                    placeholder="0"
+                    value={values.secondValue}
+                    onChange={handleChange}
+                    name="secondValue"
+                  />
                   <div className="select-box">
                     <CoinSwap />
                     THPAY
@@ -92,15 +121,19 @@ const HomePage = () => {
                 </div>
                 <div className="checkbox-wrapper">
                   <div className="form-checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <label htmlFor="checkbox">checkbox</label>
+                    <input type="checkbox" name="condition" id="checkbox" onChange={handleChange} />
+                    <label htmlFor="checkbox">
+                      <Mark />
+                    </label>
                   </div>
                   <p>
                     I have read and agree with HedgePay Terms of Service. I have done my research to make sure I am legally
                     able to purchase the token in my country of residence.
                   </p>
                 </div>
-                <button type="submit">Swap</button>
+                <button disabled={!values.firstValue || !values.secondValue || !values.condition} type="submit">
+                  Swap
+                </button>
               </div>
             </form>
           </div>

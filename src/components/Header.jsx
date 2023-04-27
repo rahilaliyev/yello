@@ -11,27 +11,27 @@ const Header = () => {
           </Link>
           <ul>
             <li>
-              <NavLink to="/swap" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/swap" className={({ isActive }) => (isActive ? "active" : "")}>
                 Swap
               </NavLink>
             </li>
             <li>
-              <NavLink to="/rewards" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/rewards" className={({ isActive }) => (isActive ? "active" : "")}>
                 Rewards
               </NavLink>
             </li>
             <li>
-              <NavLink to="/products" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/products" className={({ isActive }) => (isActive ? "active" : "")}>
                 Products
               </NavLink>
             </li>
             <li>
-              <NavLink to="/launchpad" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/launchpad" className={({ isActive }) => (isActive ? "active" : "")}>
                 Launchpad
               </NavLink>
             </li>
             <li>
-              <NavLink to="/leaderboard" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/leaderboard" className={({ isActive }) => (isActive ? "active" : "")}>
                 Leaderboard
               </NavLink>
             </li>
@@ -40,12 +40,12 @@ const Header = () => {
         <div className="right">
           <ul>
             <li>
-              <NavLink to="/about" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>
                 About Us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/support" className={({ isActive }) => isActive && "active"}>
+              <NavLink to="/support" className={({ isActive }) => (isActive ? "active" : "")}>
                 Support
               </NavLink>
             </li>
