@@ -16,6 +16,9 @@ header {
     .left,
     .right {
       width: 50%;
+      @include breakpoint(laptop) {
+        width: auto;
+      }
     }
     .left {
       @include flexBox(flex-start, center);
@@ -45,6 +48,9 @@ header {
           @include fontSize(14px, 500, 14px, white);
           position: relative;
           margin: 0 11px;
+          @include breakpoint(laptop) {
+            display: none;
+          }
           &::after {
             content: "";
             @include box(100%, 1px);
@@ -64,6 +70,9 @@ header {
             position: absolute;
             left: 0;
             background: white;
+            @include breakpoint(laptop) {
+              display: none;
+            }
           }
           .notification {
             position: absolute;
@@ -79,6 +88,9 @@ header {
   }
   ul {
     @include flexBox(center, center);
+    @include breakpoint(laptop) {
+      display: none;
+    }
     li {
       &:not(:last-child) {
         margin-right: 22px;
